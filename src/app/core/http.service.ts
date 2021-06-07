@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {EMPTY, Observable, throwError} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
-import {MatSnackBar} from '@angular/material/snack-bar';
+//import {MatSnackBar} from '@angular/material/snack-bar';
 
 import {Error} from '@core/error.model';
 
@@ -21,7 +21,7 @@ export class HttpService {
   private successfulNotification = undefined;
   private errorNotification = undefined;
 
-  constructor(private http: HttpClient, private snackBar: MatSnackBar, private router: Router) {
+  constructor(private http: HttpClient, private router: Router) {
     this.resetOptions();
   }
 
@@ -128,9 +128,9 @@ export class HttpService {
 
   private extractData(response): any {
     if (this.successfulNotification) {
-      this.snackBar.open(this.successfulNotification, '', {
-        duration: 2000
-      });
+      //this.snackBar.open(this.successfulNotification, '', {
+        //duration: 2000
+      //});
       this.successfulNotification = undefined;
     }
     const contentType = response.headers.get('content-type');
@@ -148,10 +148,10 @@ export class HttpService {
 
   private showError(notification: string): void {
     if (this.errorNotification) {
-      this.snackBar.open(this.errorNotification, 'Error', {duration: 5000});
+      //this.snackBar.open(this.errorNotification, 'Error', {duration: 5000});
       this.errorNotification = undefined;
     } else {
-      this.snackBar.open(notification, 'Error', {duration: 5000});
+      //this.snackBar.open(notification, 'Error', {duration: 5000});
     }
   }
 
