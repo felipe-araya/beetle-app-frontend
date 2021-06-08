@@ -16,6 +16,7 @@ import "@ui5/webcomponents-fiori/dist/features/CoPilotAnimation.js";
 
 import "@ui5/webcomponents-fiori/dist/Assets.js";
 import "@ui5/webcomponents-fiori/dist/features/CoPilotAnimation.js";
+import { HomeRoutingModule } from './home-routing.module';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import "@ui5/webcomponents-fiori/dist/features/CoPilotAnimation.js";
   imports: [
     
     SharedModule,
+    HomeRoutingModule
    
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
