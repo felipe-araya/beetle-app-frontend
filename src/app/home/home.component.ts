@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import "@ui5/webcomponents-fiori/dist/ShellBar"; 
+import "@ui5/webcomponents-fiori/dist/SideNavigation.js"; 
+import "@ui5/webcomponents-fiori/dist/SideNavigationItem.js";
+import "@ui5/webcomponents-fiori/dist/SideNavigationSubItem.js";
+
+
+
 
 @Component({
   //selector: 'app-home',

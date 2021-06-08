@@ -1,6 +1,47 @@
+<ui5-shellbar
+primary-title="Corporate Portal"
+secondary-title="secondary title"
+show-co-pilot
+show-product-switch
+show-notifications
+notification-count="22"
+>
+	<img slot="logo" src="../../../assets/images/Beetle.png"/>
+	<ui5-avatar slot="profile" ></ui5-avatar>
+</ui5-shellbar>
+
+<ui5-side-navigation>
+	<ui5-side-navigation-item text="Home" icon="home"></ui5-side-navigation-item>
+	<ui5-side-navigation-item text="People" expanded icon="group">
+		<ui5-side-navigation-sub-item text="From My Team"></ui5-side-navigation-sub-item>
+		<ui5-side-navigation-sub-item text="From Other Teams"></ui5-side-navigation-sub-item>
+	</ui5-side-navigation-item>
+	<ui5-side-navigation-item text="Locations" icon="locate-me" selected></ui5-side-navigation-item>
+	<ui5-side-navigation-item text="Events" icon="calendar">
+		<ui5-side-navigation-sub-item text="Local"></ui5-side-navigation-sub-item>
+		<ui5-side-navigation-sub-item text="Others"></ui5-side-navigation-sub-item>
+	</ui5-side-navigation-item>
+
+	<ui5-side-navigation-item slot="fixedItems" text="Useful Links" icon="chain-link"></ui5-side-navigation-item>
+	<ui5-side-navigation-item slot="fixedItems" text="History" icon="history"></ui5-side-navigation-item>
+</ui5-side-navigation>
+
+<script>
+	const sideNavigation = document.querySelector("ui5-side-navigation");
+	document.querySelector("#startButton").addEventListener("click", event => sideNavigation.collapsed = !sideNavigation.collapsed);
+</script>
+
+<style>
+	ui5-shellbar::part(root) {
+		padding-left: .5rem;
+	}
+</style>
+	
+
+
+
 
 
 <router-outlet></router-outlet>
 
-
-<p>home works! Vamos a costarnos csm weeeena!!</p>
+<app-footer></app-footer>
