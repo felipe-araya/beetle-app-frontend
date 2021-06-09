@@ -8,12 +8,15 @@ import {CoreModule} from '@core/core.module';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {DatePipe} from '@angular/common';
-import { HomeComponent } from './home/home.component';
+
+
+
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,

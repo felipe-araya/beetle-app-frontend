@@ -1,42 +1,131 @@
-<ui5-shellbar
-primary-title="Corporate Portal"
-secondary-title="secondary title"
-show-co-pilot
-show-product-switch
-show-notifications
-notification-count="22"
->
-	<img slot="logo" src="../../../assets/images/Beetle.png"/>
-	<ui5-avatar slot="profile" ></ui5-avatar>
-</ui5-shellbar>
 
-<ui5-side-navigation>
-	<ui5-side-navigation-item text="Home" icon="home"></ui5-side-navigation-item>
-	<ui5-side-navigation-item text="People" expanded icon="group">
-		<ui5-side-navigation-sub-item text="From My Team"></ui5-side-navigation-sub-item>
-		<ui5-side-navigation-sub-item text="From Other Teams"></ui5-side-navigation-sub-item>
-	</ui5-side-navigation-item>
-	<ui5-side-navigation-item text="Locations" icon="locate-me" selected></ui5-side-navigation-item>
-	<ui5-side-navigation-item text="Events" icon="calendar">
-		<ui5-side-navigation-sub-item text="Local"></ui5-side-navigation-sub-item>
-		<ui5-side-navigation-sub-item text="Others"></ui5-side-navigation-sub-item>
-	</ui5-side-navigation-item>
+<mat-toolbar color="primary">
+    <div>
+        <button mat-button routerLink="/home/adviser">  
+            <img alt="beetle" src="../../assets/images/Beetle.png"/> 
+        </button>       
+    </div>
+    <div>
+        <mat-form-field appearance="fill" floatLabel="false" hideRequiredMarker="true">
+        <mat-label><small>Search</small></mat-label>
+        <input #code matInput placeholder="" required>
+        </mat-form-field>
+        <button (click)="search(code.value)" mat-icon-button>
+        <mat-icon>pageview</mat-icon>
+        </button>
 
-	<ui5-side-navigation-item slot="fixedItems" text="Useful Links" icon="chain-link"></ui5-side-navigation-item>
-	<ui5-side-navigation-item slot="fixedItems" text="History" icon="history"></ui5-side-navigation-item>
-</ui5-side-navigation>
+        <button (click)="login()" *ngIf="isAuthenticated()" mat-button>
+        <mat-icon>person_outline</mat-icon>
+        <span>Login</span>
+        </button>
+        <button (click)="register()" *ngIf="isAuthenticated()" mat-button>
+        <mat-icon>person_add_alt_1</mat-icon>
+        <span>Register</span>
+        </button>
+        <button (click)="logout()" *ngIf="isAuthenticated()" mat-button>
+        <span>{{username}}</span>
+        <mat-icon>person_outline</mat-icon>
+        <span>Logout</span>
+        </button>
+        <button *ngIf="isAuthenticated()" [matMenuTriggerFor]="profile" mat-button>
+        <mat-icon>account_box</mat-icon>
+        <span>Profile</span>
+        </button>
+        <button (click)="cart()" mat-button routerLink="/home/data-table">
+        <mat-icon  matBadgeColor="accent" matBadgeOverlap="false" matBadgeSize="medium">settings
+        </mat-icon>
+        </button>
+    </div>
+</mat-toolbar>
 
-<script>
-	const sideNavigation = document.querySelector("ui5-side-navigation");
-	document.querySelector("#startButton").addEventListener("click", event => sideNavigation.collapsed = !sideNavigation.collapsed);
-</script>
+<mat-menu #profile="matMenu" xPosition="before">
+    <button mat-menu-item routerLink="/home/settings">
+        <mat-icon>settings</mat-icon>
+        <span>Settings</span>
+    </button>
+    <button mat-menu-item routerLink="/home/reviews">
+        <mat-icon>grade</mat-icon>
+        <span>Reviews</span>
+    </button>
+    <button mat-menu-item routerLink="/home/online-order">
+        <mat-icon>shopping_basket</mat-icon>
+        <span>Online Orders</span>
+    </button>
+    <button mat-menu-item>
+        <mat-icon>money_off</mat-icon>
+        <span>Refunds</span>
+    </button>
+    <button mat-menu-item routerLink="/home/complaints">
+        <mat-icon>sentiment_very_dissatisfied</mat-icon>
+        <span>Complaints</span>
+    </button>
+    <button mat-menu-item>
+        <mat-icon>build</mat-icon>
+        <span>Technical Support</span>
+    </button>
+</mat-menu>
 
-<style>
-	ui5-shellbar::part(root) {
-		padding-left: .5rem;
-	}
-</style>
-	
+   <!--  <mat-toolbar class="center">
+        <button [matMenuTriggerFor]="adviser" mat-button>Findings</button>
+        <mat-menu #adviser="matMenu">
+            <button mat-menu-item routerLink="/home/adviser/sale">Sale</button>
+            <button mat-menu-item routerLink="/home/adviser/popular">Popular</button>
+            <button mat-menu-item routerLink="/home/adviser/news">New</button>
+        </mat-menu>
+        <button mat-button routerLink="/home/top5">Top 5</button>
+    </mat-toolbar> -->
+
+<mat-sidenav-container class="example-container" autosize>
+	<mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+		<mat-nav-list>
+			<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+				<span class="full-width" *ngIf="isExpanded || isShowing">Findings</span>
+				<mat-icon mat-list-icon>view_list</mat-icon>
+				<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+			</mat-list-item>
+			<div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
+				<a mat-list-item href="...">Edit Finding</a>
+				<a mat-list-item href="...">Delete Finding</a>
+				<mat-list-item (click)="showSubSubMenu = !showSubSubMenu" class="parent">
+					<span class="full-width" *ngIf="isExpanded || isShowing">Analyze</span>
+					<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubSubMenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+				</mat-list-item>
+				<div class="submenu" [ngClass]="{'expanded' : showSubSubMenu}" *ngIf="isShowing || isExpanded">
+					<mat-list-item>Taxonomy</mat-list-item>
+					<mat-list-item>Metrics</mat-list-item>
+				</div>
+			</div>
+ 
+            </mat-nav-list>
+          <mat-nav-list>
+          </mat-nav-list>
+    </mat-sidenav>
+        <mat-toolbar>
+            <div>
+                <button mat-button routerLink="/home/adviser">  
+                    <mat-icon  matBadgeColor="accent" matBadgeOverlap="false" matBadgeSize="medium">place</mat-icon>
+                </button>  
+                <button mat-button routerLink="/home/adviser">  
+                    <mat-icon  matBadgeColor="accent" matBadgeOverlap="false" matBadgeSize="medium"> add_comment</mat-icon>
+                </button> 
+                <button mat-button routerLink="/home/adviser">  
+                    <mat-icon  matBadgeColor="accent" matBadgeOverlap="false" matBadgeSize="medium"> border_color</mat-icon>
+                </button> 
+                <button mat-button routerLink="/home/adviser">  
+                    <mat-icon  matBadgeColor="accent" matBadgeOverlap="false" matBadgeSize="medium"> format_shapes</mat-icon>
+                </button> 
+                <button mat-button routerLink="/home/adviser">  
+                    <mat-icon  matBadgeColor="accent" matBadgeOverlap="false" matBadgeSize="medium"> crop</mat-icon>
+                </button> 
+
+            </div>
+        </mat-toolbar>        
+        <div class="example-sidenav-content">
+            
+            <app-map></app-map>
+        </div>
+
+</mat-sidenav-container>
 
 
 
@@ -44,4 +133,4 @@ notification-count="22"
 
 <router-outlet></router-outlet>
 
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->
