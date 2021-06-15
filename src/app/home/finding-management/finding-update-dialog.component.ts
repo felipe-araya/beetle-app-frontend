@@ -42,7 +42,19 @@ export class FindingUpdateDialogComponent {
   }
 
   invalid(): boolean {
-    return this.check(this.finding.id);
+    return     this.check(this.finding.scientific_type) || 
+               this.check(this.finding.author) ||
+               this.check(this.finding.characteristic) ||
+               this.check(this.finding.location_name) ||
+               //this.check(this.finding.coordinate_x) ||
+               //this.check(this.finding.coordinate_y) ||
+               //this.check(this.finding.altitude) ||
+               this.check(this.finding.date_of_creation) ||
+               this.check(this.finding.observer) ||
+               //this.check(this.finding.quantity) ||
+               this.check(this.finding.source_of_origin) ||
+               this.check(this.finding.genus) ||
+               this.check(this.finding.species) ;
   }
 
   check(attr: string): boolean {
