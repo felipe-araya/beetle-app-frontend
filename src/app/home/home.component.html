@@ -1,7 +1,7 @@
 
 <mat-toolbar color="primary">
     <div>
-        <button mat-button routerLink="/home/adviser">  
+        <button mat-button routerLink="/home">  
             <img alt="beetle" src="../../assets/images/Beetle.png"/> 
         </button>       
     </div>
@@ -80,12 +80,12 @@
 		<mat-nav-list>
 			<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
 				<span class="full-width" *ngIf="isExpanded || isShowing">Findings</span>
-				<mat-icon mat-list-icon>view_list</mat-icon>
+				
 				<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
 			</mat-list-item>
 			<div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
-				<a mat-list-item href="...">Edit Finding</a>
-				<a mat-list-item href="...">Delete Finding</a>
+				<a mat-list-item routerLink="/home/finding-management">Finding Management</a>
+				
 				<mat-list-item (click)="showSubSubMenu = !showSubSubMenu" class="parent">
 					<span class="full-width" *ngIf="isExpanded || isShowing">Analyze</span>
 					<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubSubMenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
@@ -102,27 +102,20 @@
     </mat-sidenav>
         <mat-toolbar>
             <div>
-                <button mat-button routerLink="/home/adviser">  
+                <button mat-button routerLink="/home/map">  
                     <mat-icon  matBadgeColor="accent" matBadgeOverlap="false" matBadgeSize="medium">place</mat-icon>
                 </button>  
-                <button mat-button routerLink="/home/adviser">  
-                    <mat-icon  matBadgeColor="accent" matBadgeOverlap="false" matBadgeSize="medium"> add_comment</mat-icon>
+                <button mat-button routerLink="/home/table">  
+                    <mat-icon  matBadgeColor="accent" matBadgeOverlap="false" matBadgeSize="medium"> view_list</mat-icon>
                 </button> 
-                <button mat-button routerLink="/home/adviser">  
-                    <mat-icon  matBadgeColor="accent" matBadgeOverlap="false" matBadgeSize="medium"> border_color</mat-icon>
-                </button> 
-                <button mat-button routerLink="/home/adviser">  
-                    <mat-icon  matBadgeColor="accent" matBadgeOverlap="false" matBadgeSize="medium"> format_shapes</mat-icon>
-                </button> 
-                <button mat-button routerLink="/home/adviser">  
-                    <mat-icon  matBadgeColor="accent" matBadgeOverlap="false" matBadgeSize="medium"> crop</mat-icon>
-                </button> 
+                
 
             </div>
         </mat-toolbar>        
         <div class="example-sidenav-content">
             
-            <app-map></app-map>
+            <router-outlet></router-outlet>
+        
         </div>
 
 </mat-sidenav-container>
@@ -131,6 +124,6 @@
 
 
 
-<router-outlet></router-outlet>
+
 
 <!-- <app-footer></app-footer> -->

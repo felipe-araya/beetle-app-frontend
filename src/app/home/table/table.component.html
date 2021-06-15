@@ -1,0 +1,106 @@
+<div class="div-container mat-elevation-z8">
+
+    <mat-table matSort aria-label="Elements">
+      <!-- scientific_type Column -->
+      <ng-container matColumnDef="scientific_type">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Scientific type</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.scientific_type}}</mat-cell>
+      </ng-container>
+  
+      <!-- author Column -->
+      <ng-container matColumnDef="author">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Author</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.author}}</mat-cell>
+      </ng-container>
+      
+      <!-- characteristic Column -->
+      <ng-container matColumnDef="characteristic">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Characteristic</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.characteristic}}</mat-cell>
+      </ng-container>
+  
+      <!-- location_name Column -->
+      <ng-container matColumnDef="location_name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Location name</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.location_name}}</mat-cell>
+      </ng-container>
+  
+      <!-- coordinate_x Column -->
+      <ng-container matColumnDef="coordinate_x">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Coordinate x</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.coordinate_x}}</mat-cell>
+      </ng-container>
+  
+      <!-- coordinate_y Column -->
+      <ng-container matColumnDef="coordinate_y">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Coordinate y</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.coordinate_y}}</mat-cell>
+      </ng-container>
+  
+      <!-- altitude Column -->
+      <ng-container matColumnDef="altitude">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Altitude</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.altitude}}</mat-cell>
+      </ng-container>
+  
+      <!-- tolerance Column -->
+      <ng-container matColumnDef="tolerance">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Tolerance</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.tolerance}}</mat-cell>
+      </ng-container>
+  
+      <!-- region Column -->
+      <ng-container matColumnDef="region">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Region</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.region}}</mat-cell>
+      </ng-container>
+  
+      <!-- date_of_creation Column -->
+      <ng-container matColumnDef="date_of_creation">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Date of creation</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.date_of_creation}}</mat-cell>
+      </ng-container>
+  
+      <!-- observer Column -->
+      <ng-container matColumnDef="observer">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Observer</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.observer}}</mat-cell>
+      </ng-container>
+  
+      <!-- quantity Column -->
+      <ng-container matColumnDef="quantity">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Quantity</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.quantity}}</mat-cell>
+      </ng-container>
+  
+      <!-- source_of_origin Column -->
+      <ng-container matColumnDef="source_of_origin">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Source of origin</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.source_of_origin}}</mat-cell>
+      </ng-container>
+  
+      <!-- genus Column -->
+      <ng-container matColumnDef="genus">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Genus</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.genus}}</mat-cell>
+      </ng-container>
+  
+      <!-- species Column -->
+      <ng-container matColumnDef="species">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Species</mat-header-cell>
+        <mat-cell *matCellDef="let row">{{row.species}}</mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  
+    <mat-paginator #paginator
+        [length]="dataSource?.data.length"
+        [pageIndex]="0"
+        [pageSize]="50"
+        [pageSizeOptions]="[25, 50, 100, 250]">
+    </mat-paginator>
+  </div>
+  
+  

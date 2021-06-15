@@ -5,13 +5,18 @@ import {FlexLayoutModule, FlexModule} from '@angular/flex-layout';
 
 import {MaterialModule} from '@shared/material.module';
 
+import {CancelYesDialogComponent} from '@shared/dialogs/cancel-yes-dialog.component';
+import {LoginDialogComponent} from '@shared/dialogs/login-dialog.component';
+import {NumberDialogComponent} from '@shared/dialogs/number-dialog.component';
+import {ReadDetailDialogComponent} from '@shared/dialogs/read-detail.dialog.component';
+
+
+
 import {FooterComponent} from '@shared/components/footer.component';
-
-
-
 
 import {UppercaseWords} from '@shared/pipes/UppercaseWordsPipe';
 import {UserCompleteService} from '@shared/services/userComplete.service';
+import {CrudComponent} from '@shared/components/crud/crud.component';
 
 
 @NgModule({
@@ -27,6 +32,13 @@ import {UserCompleteService} from '@shared/services/userComplete.service';
   
     FooterComponent,
     UppercaseWords,
+    CrudComponent,
+    CancelYesDialogComponent,
+    LoginDialogComponent,
+    NumberDialogComponent,
+    ReadDetailDialogComponent, 
+   
+
     
 
   ],
@@ -41,8 +53,12 @@ import {UserCompleteService} from '@shared/services/userComplete.service';
     ReactiveFormsModule, 
     FooterComponent,
     UppercaseWords,
-    MaterialModule
+    MaterialModule,
+    LoginDialogComponent,
+    NumberDialogComponent,
+    ReadDetailDialogComponent,
    
+    CrudComponent
   ],
   entryComponents: [
     

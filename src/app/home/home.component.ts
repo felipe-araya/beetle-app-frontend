@@ -5,12 +5,7 @@ import {Subscription} from 'rxjs';
 import {Finding} from '../shared/models/finding.model';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MapComponent} from './map/map.component';
-
-
-
-
-
-
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 
 @Component({
@@ -44,11 +39,11 @@ export class HomeComponent implements OnInit {
 
 
 
-  constructor(private userCompleteService: UserCompleteService) { }
+  constructor() { }
 
   ngOnInit(): void {
 
-    this.onLoginSubscription = this.userCompleteService.createCompleteFinding(this.find).subscribe();
+    //this.onLoginSubscription = this.userCompleteService.createCompleteFinding(this.find).subscribe();
 
 
   }

@@ -1,0 +1,94 @@
+<h2 mat-dialog-title> {{title}} </h2>
+<mat-dialog-content>
+
+  <mat-form-field class="full-width">
+    <mat-label>Scientific Name</mat-label>
+    <input [(ngModel)]="finding.scientific_type" matInput  type="text" disabled/>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Author</mat-label>
+    <input [(ngModel)]="finding.author" matInput  type="text" disabled/>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Characteristic</mat-label>
+    <input [(ngModel)]="finding.characteristic" matInput  type="text" disabled/>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Location Name</mat-label>
+    <input [(ngModel)]="finding.location_name" matInput  type="text" disabled/>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Coordinate x</mat-label>
+    <input [(ngModel)]="finding.coordinate_x" matInput type="text" disabled/>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Coordinate y</mat-label>
+    <input [(ngModel)]="finding.coordinate_y" matInput  type="text" disabled/>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Altitude</mat-label>
+    <input [(ngModel)]="finding.altitude" matInput  type="text" disabled/>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Tolerance</mat-label>
+    <input [(ngModel)]="finding.tolerance" matInput  type="text" disabled/>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Region</mat-label>
+    <input [(ngModel)]="finding.region" matInput type="text" disabled/>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Date of creation</mat-label>
+    <input [(ngModel)]="finding.date_of_creation" matInput type="text" disabled/>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Observer</mat-label>
+    <input [(ngModel)]="finding.observer" matInput type="text" disabled/>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Quantity</mat-label>
+    <input [(ngModel)]="finding.quantity" matInput  type="text" disabled/>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Source of origin</mat-label>
+    <input [(ngModel)]="finding.source_of_origin" matInput type="text" disabled/>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Genus</mat-label>
+    <input [(ngModel)]="finding.genus" matInput type="text" disabled/>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Species</mat-label>
+    <input [(ngModel)]="finding.species" matInput type="text" disabled/>
+  </mat-form-field>
+
+  
+</mat-dialog-content>
+
+
+
+
+
+
+
+
+
+<mat-dialog-actions>
+  <button cdkFocusInitial mat-dialog-close mat-raised-button>Close</button>
+  <button  color="primary" mat-raised-button>Update
+  </button>
+</mat-dialog-actions>

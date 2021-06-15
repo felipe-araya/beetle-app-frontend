@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {EMPTY, Observable, throwError} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
-//import {MatSnackBar} from '@angular/material/snack-bar';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 import {Error} from '@core/error.model';
 
@@ -128,9 +128,9 @@ export class HttpService {
 
   private extractData(response): any {
     if (this.successfulNotification) {
-      //this.snackBar.open(this.successfulNotification, '', {
-        //duration: 2000
-      //});
+      /* this.snackBar.open(this.successfulNotification, '', {
+      duration: 2000
+      }); */
       this.successfulNotification = undefined;
     }
     const contentType = response.headers.get('content-type');

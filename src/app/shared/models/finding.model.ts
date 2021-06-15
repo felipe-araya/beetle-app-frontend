@@ -1,5 +1,5 @@
 export interface Finding {
-    id: string,
+    id?: string;
     scientific_type: string;
     author: string;
     characteristic: string;
@@ -11,7 +11,7 @@ export interface Finding {
     region: string;
     date_of_creation: string;
     observer: string;
-    quantity: number;
+    quantity: number
     source_of_origin: string;
     genus: string;
     species: string;
