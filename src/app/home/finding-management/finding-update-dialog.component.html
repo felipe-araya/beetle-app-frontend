@@ -2,6 +2,11 @@
 <mat-dialog-content>
 
   <mat-form-field class="full-width">
+    <mat-label>ID</mat-label>
+    <input [(ngModel)]="finding.id" matInput  type="text" disabled/>
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
     <mat-label>Scientific Name</mat-label>
     <input [(ngModel)]="finding.scientific_type" matInput  type="text" disabled/>
   </mat-form-field>

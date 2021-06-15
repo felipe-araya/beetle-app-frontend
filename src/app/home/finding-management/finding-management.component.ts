@@ -38,17 +38,14 @@ export class FindingManagementComponent implements OnInit {
   }
   
   
-  
-  
-
-  /* read(finding: Finding): void {
+  read(finding: Finding): void {
     this.dialog.open(ReadDetailDialogComponent, {
       data: {
-        title: 'Complaint Details',
+        title: 'Findings Details',
         object: this.findingService.read(finding.id)
       }
     });
-  } */
+  } 
 
   /* update(finding: Finding): void {
     this.findingService.update(finding)

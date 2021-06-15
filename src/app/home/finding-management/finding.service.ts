@@ -22,28 +22,28 @@ export class FindingService {
       .post(EndPoints.FINDINGS, finding);
   }
   
-  /* update(finding: Finding): Observable<Finding> {
-    /*let complaintUpdate =
+  update(finding: Finding): Observable<Finding> {
+  /* let complaintUpdate =
       this.complaints.find(c => c.id === complaint.id);
     const i = this.complaints.indexOf(complaintUpdate);
     if(i>=0) {
       this.complaints.splice(i, 1, complaint);
     }
-    return of(complaint);*/
-  /*   return this.httpService
+    return of(complaint);*/ 
+  return this.httpService
       .put(EndPoints.FINDINGS + '/' + finding.id, finding);
   }
   
   read(id: string): Observable<Finding> {
     return this.httpService
       .get(EndPoints.FINDINGS + '/' + id);
-  } */ 
+  } 
   
-  /* delete(id: string): Observable<void>{
+  delete(id: string): Observable<void>{
     return this.httpService
       .delete(EndPoints.FINDINGS + '/' + id );
   }
-   */
+  
 
 
 

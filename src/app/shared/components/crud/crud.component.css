@@ -1,11 +1,7 @@
-.mat-card-content{
-    width: 300px;
-  }
 .mat-card{
-width: 300px;
+
+width: 1200%;
+position:relative;
+
+
 }
-  
-.full-width {
-width: 100%;
-}
- 

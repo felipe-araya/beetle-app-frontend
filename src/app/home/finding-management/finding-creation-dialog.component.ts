@@ -16,6 +16,7 @@ export class FindingCreationDialogComponent {
 
     constructor(private findingService: FindingService, private dialog: MatDialog) {
     this.finding = {
+                    id: undefined,
                     scientific_type: undefined, 
                     author: undefined, 
                     characteristic: undefined, 
