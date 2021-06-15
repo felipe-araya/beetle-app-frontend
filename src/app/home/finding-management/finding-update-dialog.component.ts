@@ -11,7 +11,7 @@ import {AuthService} from '@core/auth.service';
 })
 
 export class FindingUpdateDialogComponent {
-  title: string = 'Update Complaint';
+  title: string = 'Update Finding';
   finding: Finding;
 
   constructor(@Inject(MAT_DIALOG_DATA) data: Finding, private findingService: FindingService,
@@ -35,11 +35,11 @@ export class FindingUpdateDialogComponent {
                 };
   }
 
-  /* update(): void {
+  update(): void {
     this.findingService
       .update(this.finding)
       .subscribe(() => this.dialog.closeAll());
-  } */
+  }
 
   invalid(): boolean {
     return this.check(this.finding.id);
