@@ -47,7 +47,7 @@ export class FindingManagementComponent implements OnInit {
     });
   } 
 
-  /* update(finding: Finding): void {
+  update(finding: Finding): void {
     this.findingService.update(finding)
       .subscribe(data => {
         this.dialog.open(FindingUpdateDialogComponent, {data
@@ -56,13 +56,13 @@ export class FindingManagementComponent implements OnInit {
           .subscribe(() => this.searchAll());
       })
 
-  } */
+  }
 
-  /* delete(finding: Finding): void {
+  delete(finding: Finding): void {
     this.findingService
       .delete(finding.id)
       .subscribe(() => this.searchAll());
-  } */
+  }
 }
 
 

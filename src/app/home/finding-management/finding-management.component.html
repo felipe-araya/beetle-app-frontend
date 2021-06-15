@@ -6,5 +6,6 @@
       </button>
     </mat-card-content>
   </mat-card>
-  <app-crud (create)="create()" (read)="read($event)" [data]="findings" [title]="title"></app-crud>
+  <app-crud (create)="create()" (read)="read($event)" (delete)="delete($event)"
+                      (update)="update($event)" [data]="findings" [title]="title"></app-crud>
   
