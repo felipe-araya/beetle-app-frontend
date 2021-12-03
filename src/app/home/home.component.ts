@@ -46,9 +46,9 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    // this.mediaSub = this.mediaObserver.asObservable().subscribe((result: MediaChange)=> {
-    //   console.log(result.mqAlias);
-    // })
+    this.mediaSub = this.mediaObserver.asObservable().subscribe(p => {
+
+      })
 
     //this.onLoginSubscription = this.userCompleteService.createCompleteFinding(this.find).subscribe();
 
