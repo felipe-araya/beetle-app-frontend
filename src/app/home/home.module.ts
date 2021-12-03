@@ -3,6 +3,8 @@ import {NgModule} from '@angular/core';
 import {SharedModule} from '@shared/shared.module';
 import {HomeComponent} from './home.component';
 
+import {FlexLayoutModule, FlexModule} from '@angular/flex-layout';
+
 import { HomeRoutingModule } from './home-routing.module';
 import { MapComponent } from './map/map.component';
 import { TableComponent } from './table/table.component';
@@ -22,7 +24,7 @@ import { MatSortModule } from '@angular/material/sort';
     TableComponent,
     FindingManagementComponent,
     FindingCreationDialogComponent,
-    FindingUpdateDialogComponent
+    FindingUpdateDialogComponent,
  
   ],
   entryComponents: [
@@ -34,7 +36,9 @@ import { MatSortModule } from '@angular/material/sort';
     HomeRoutingModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    FlexLayoutModule,
+    FlexModule
    
   ],
   

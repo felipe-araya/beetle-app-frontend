@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 
 import {UserCompleteService} from '@shared/services/userComplete.service';
 import {Subscription} from 'rxjs';
@@ -6,6 +6,7 @@ import {Finding} from '../shared/models/finding.model';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MapComponent} from './map/map.component';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { MediaObserver, MediaChange } from '@angular/flex-layout';
 
 
 @Component({
@@ -13,9 +14,11 @@ import {MatSnackBar} from '@angular/material/snack-bar';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
-  onLoginSubscription: Subscription;
+  mediaSub: Subscription;
+
+ /*  onLoginSubscription: Subscription;
 
   find: Finding ={
     id: "f6e66866-ea81-448c-a082-c280c7457500",
@@ -35,18 +38,25 @@ export class HomeComponent implements OnInit {
     genus: "Leistus",
     species: "Felipe",
 
-  }
+  } */
 
 
 
-  constructor() { }
+  constructor(public mediaObserver: MediaObserver) { }
 
   ngOnInit(): void {
+
+    // this.mediaSub = this.mediaObserver.asObservable().subscribe((result: MediaChange)=> {
+    //   console.log(result.mqAlias);
+    // })
 
     //this.onLoginSubscription = this.userCompleteService.createCompleteFinding(this.find).subscribe();
 
 
   }
+
+  ngOnDestroy(){}
+
   login(): void {
     //this.dialog.open(LoginDialogComponent)
     //  .afterClosed()

@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeModule } from './home/home.module';
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'login'},
+  {path: '', pathMatch: 'full', redirectTo: 'home'},
   {path: 'login', loadChildren: () => import('./login/login.module').then(module => module.LoginModule)}, // lazy load
   {path: 'home', loadChildren: () => import('./home/home.module').then(module => module.HomeModule)} // lazy load
 ];
