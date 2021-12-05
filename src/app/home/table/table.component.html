@@ -368,7 +368,81 @@
   });
 </script>
 
+
+
+
+<ui5-table id="myTblGrowsOnScroll" class="tab1" mode="SingleSelect" growing="Scroll">
+  <!-- Columns -->
+<ui5-table-column slot="columns" style="width: 12rem" id="title1">
+ <span style="line-height: 1.4rem">Scientific type</span>
+</ui5-table-column>
+
+<ui5-table-column slot="columns" min-width="800" >
+ <span style="line-height: 1.4rem" >Author</span>
+</ui5-table-column>
+
+<ui5-table-column slot="columns"  min-width="800">
+ <span style="line-height: 1.4rem">Characteristic</span>
+</ui5-table-column>
+
+<ui5-table-column slot="columns"  min-width="800">
+<span style="line-height: 1.4rem">Location name</span>
+</ui5-table-column>
+
+<ui5-table-column slot="columns"  min-width="800">
+<span style="line-height: 1.4rem">Coordinate x</span>
+</ui5-table-column>
+
+<ui5-table-column slot="columns"  min-width="800">
+<span style="line-height: 1.4rem">Coordinate y</span>
+</ui5-table-column>
+
+<ui5-table-column slot="columns"  min-width="800">
+<span style="line-height: 1.4rem">Altitude</span>
+</ui5-table-column>
+
+<ui5-table-column slot="columns" min-width="800">
+ <span style="line-height: 1.4rem">Tolerance</span>
+</ui5-table-column>
+
+<ui5-table-column slot="columns" min-width="800">
+ <span style="line-height: 1.4rem">Region</span>
+</ui5-table-column>
+
+<ui5-table-column slot="columns" min-width="800" >
+ <span style="line-height: 1.4rem" >Date of creation</span>
+</ui5-table-column>
+
+<ui5-table-column slot="columns" min-width="800">
+ <span style="line-height: 1.4rem">Observer</span>
+</ui5-table-column>
+
+<ui5-table-column slot="columns" min-width="800">
+<span style="line-height: 1.4rem">Quantity</span>
+</ui5-table-column>
+
+<ui5-table-column slot="columns" min-width="800">
+<span style="line-height: 1.4rem">Source of origin</span>
+</ui5-table-column>
+
+<ui5-table-column slot="columns" min-width="800">
+<span style="line-height: 1.4rem">Genus</span>
+</ui5-table-column>
+
+<ui5-table-column slot="columns" min-width="800">
+ <span style="line-height: 1.4rem">Species</span>
+</ui5-table-column>
+
+
 <ng-container *ngFor="let def of finding" [matColumnDef]="def">
-  <mat-header-cell *matHeaderCellDef>{{ def | uppercaseWords }}</mat-header-cell>
-  <mat-cell *matCellDef="let row">{{ row[def] }}</mat-cell>
+  <ui5-table-row>
+    <ui5-table-cell *matCellDef="let row">{{ row[def] }}</ui5-table-cell>
+
+  </ui5-table-row>
+
+
+
+  <!-- <mat-header-cell *matHeaderCellDef>{{ def | uppercaseWords }}</mat-header-cell>
+  <mat-cell *matCellDef="let row">{{ row[def] }}</mat-cell> -->
 </ng-container>
+
