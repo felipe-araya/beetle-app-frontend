@@ -104,7 +104,7 @@
   </div>
 
    -->
-<!--
+
     <ui5-table id="myTblGrowsOnScroll" class="tab1" mode="SingleSelect" growing="Scroll">
 
    <ui5-table-column slot="columns" style="width: 12rem" id="title1">
@@ -366,9 +366,9 @@
       busyIndicator.active = false;
     }, 500);
   });
-</script> -->
+</script>
 
-<ui5-button (click) = "changeData()"> Update</ui5-button>
+
 
 
 <ui5-table id="myTblGrowsOnScroll" class="tab1" mode="SingleSelect" growing="Scroll">
@@ -379,7 +379,6 @@
       <ui5-table-column slot="columns" style="width: 12rem" id="title1">
         <span style="line-height: 1.4rem">{{ colum | uppercaseWords }}</span>
         </ui5-table-column>
-
     </ng-container>
 
   <ng-container *ngFor="let def of finding" >
@@ -400,7 +399,7 @@
 
 
 
-<!-- <table id="users">
+<table id="users">
   <tr>
     <th *ngFor = "let column of displayedColumns">
       {{column}}
@@ -413,4 +412,4 @@
     </td>
   </tr>
 
-</table> -->
+</table>
