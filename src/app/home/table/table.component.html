@@ -367,3 +367,8 @@
     }, 500);
   });
 </script>
+
+<ng-container *ngFor="let def of finding" [matColumnDef]="def">
+  <mat-header-cell *matHeaderCellDef>{{ def | uppercaseWords }}</mat-header-cell>
+  <mat-cell *matCellDef="let row">{{ row[def] }}</mat-cell>
+</ng-container>

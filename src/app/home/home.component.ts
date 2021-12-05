@@ -56,6 +56,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   findings = of([]);
 
+  finding: Finding [];
+
 
   // ui5Tab.addEventListener('tab-select', this.addData);
 
@@ -98,6 +100,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     this.findingService.searchAll().subscribe(x=>{
       console.log("THIS VALUE:",x);
+      this.finding = x;
 
 
     });
