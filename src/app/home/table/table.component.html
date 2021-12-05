@@ -382,12 +382,14 @@
     </ng-container>
 
   <ng-container *ngFor="let def of finding" >
-    <ng-container *ngFor="let colum of displayedColumns">
       <ui5-table-row>
+        <ng-container *ngFor="let colum of displayedColumns">
         <ui5-table-cell>{{ def[colum] }}</ui5-table-cell>
+
+        </ng-container>
+
       </ui5-table-row>
 
-    </ng-container>
 
 
   </ng-container>
