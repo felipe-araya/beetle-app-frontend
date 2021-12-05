@@ -1,9 +1,9 @@
-
+<!--
 <mat-toolbar color="primary">
     <div>
-        <button mat-button routerLink="/home">  
-            <img alt="beetle" src="../../assets/images/Beetle.png"/> 
-        </button>       
+        <button mat-button routerLink="/home">
+            <img alt="beetle" src="../../assets/images/Beetle.png"/>
+        </button>
     </div>
     <div>
         <mat-form-field appearance="fill" floatLabel="false" hideRequiredMarker="true">
@@ -65,7 +65,7 @@
     </button>
 </mat-menu>
 
-   <!--  <mat-toolbar class="center">
+    <mat-toolbar class="center">
         <button [matMenuTriggerFor]="adviser" mat-button>Findings</button>
         <mat-menu #adviser="matMenu">
             <button mat-menu-item routerLink="/home/adviser/sale">Sale</button>
@@ -75,17 +75,17 @@
         <button mat-button routerLink="/home/top5">Top 5</button>
     </mat-toolbar> -->
 
-<mat-sidenav-container class="example-container" autosize>
+ <!-- <mat-sidenav-container class="example-container" autosize>
 	<mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
 		<mat-nav-list>
 			<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
 				<span class="full-width" *ngIf="isExpanded || isShowing">Findings</span>
-				
+
 				<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
 			</mat-list-item>
 			<div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
 				<a mat-list-item routerLink="/home/finding-management">Finding Management</a>
-				
+
 				<mat-list-item (click)="showSubSubMenu = !showSubSubMenu" class="parent">
 					<span class="full-width" *ngIf="isExpanded || isShowing">Analyze</span>
 					<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubSubMenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
@@ -95,35 +95,140 @@
 					<mat-list-item>Metrics</mat-list-item>
 				</div>
 			</div>
- 
+
             </mat-nav-list>
           <mat-nav-list>
           </mat-nav-list>
     </mat-sidenav>
         <mat-toolbar>
             <div>
-                <button mat-button routerLink="/home/map">  
+                <button mat-button routerLink="/home/map">
                     <mat-icon  matBadgeColor="accent" matBadgeOverlap="false" matBadgeSize="medium">place</mat-icon>
-                </button>  
-                <button mat-button routerLink="/home/table">  
+                </button>
+                <button mat-button routerLink="/home/table">
                     <mat-icon  matBadgeColor="accent" matBadgeOverlap="false" matBadgeSize="medium"> view_list</mat-icon>
-                </button> 
-                
+                </button>
+
 
             </div>
-        </mat-toolbar>        
+        </mat-toolbar>
         <div class="example-sidenav-content">
-            
+
             <router-outlet></router-outlet>
-        
+
         </div>
 
 </mat-sidenav-container>
 
+<app-footer></app-footer> -->
+
+
+<div>
+  <div>
+    <ui5-shellbar
+    primary-title="WILLKOMMEN"
+    secondary-title=""
+    show-notifications
+    notifications-count="22"
+    >
+
+      <ui5-avatar slot="profile">
+        <img src="../../assets/images/perfil.jpg" />
+      </ui5-avatar>
+
+      <img slot="logo" src="../../assets/images/Beetle.png"/>
+
+        <ui5-button icon="menu" slot="startButton" id="startButton"></ui5-button>
+
+
+  </ui5-shellbar>
+  <style>
+    ui5-shellbar::part(root) {
+    padding-left: .5rem;
+    }
+    </style>
+
+
+  </div>
+</div>
+
+
+  <div class="container">
+    <div class="item" id="item1">
+
+      <ui5-side-navigation>
+        <ui5-side-navigation-item text="Home" icon="home"></ui5-side-navigation-item>
+        <ui5-side-navigation-item text="Findings" expanded icon="search">
+          <ui5-side-navigation-sub-item text="Taxonomy"></ui5-side-navigation-sub-item>
+          <ui5-side-navigation-sub-item text="Metrics"></ui5-side-navigation-sub-item>
+        </ui5-side-navigation-item>
+        <ui5-side-navigation-item text="Locations" icon="locate-me" selected></ui5-side-navigation-item>
+        <ui5-side-navigation-item text="Events" icon="calendar">
+          <ui5-side-navigation-sub-item text="Local"></ui5-side-navigation-sub-item>
+          <ui5-side-navigation-sub-item text="Others"></ui5-side-navigation-sub-item>
+        </ui5-side-navigation-item>
+
+        <ui5-side-navigation-item slot="fixedItems" text="Useful Links" icon="chain-link"></ui5-side-navigation-item>
+        <ui5-side-navigation-item slot="fixedItems" text="History" icon="history"></ui5-side-navigation-item>
+
+      </ui5-side-navigation>
+
+      <script>
+        const sideNavigation = document.querySelector("ui5-side-navigation");
+        document.querySelector("#startButton").addEventListener("click", event => sideNavigation.collapsed = !sideNavigation.collapsed);
+        </script>
+
+    </div>
+
+    <div class="item" id="item2">
+
+
+        <ui5-button (click)="checkTab()"> Map
+
+        </ui5-button>
+
+        <ui5-button (click)="checkTab2()"> Table
+
+        </ui5-button>
+
+
+
+          <div *ngIf="changeValue" >
+            <app-map></app-map>
+          </div>
+          <div class ="table1" *ngIf="changeValue2">
+            <app-data-table></app-data-table>
+          </div>
 
 
 
 
 
 
-<!-- <app-footer></app-footer> -->
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

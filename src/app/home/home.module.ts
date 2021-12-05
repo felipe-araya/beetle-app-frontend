@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {NgModule,CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
 import {SharedModule} from '@shared/shared.module';
 import {HomeComponent} from './home.component';
@@ -18,20 +18,24 @@ import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
-    
+
     HomeComponent,
     MapComponent,
     TableComponent,
     FindingManagementComponent,
     FindingCreationDialogComponent,
     FindingUpdateDialogComponent,
- 
+
   ],
   entryComponents: [
-   
+
   ],
+  schemas:[
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
+
   imports: [
-    
+
     SharedModule,
     HomeRoutingModule,
     MatTableModule,
@@ -39,11 +43,11 @@ import { MatSortModule } from '@angular/material/sort';
     MatSortModule,
     FlexLayoutModule,
     FlexModule
-   
+
   ],
-  
+
   providers: [
-    
+
   ]
 })
 export class HomeModule {

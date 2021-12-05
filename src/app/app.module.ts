@@ -1,4 +1,5 @@
-import {NgModule} from '@angular/core';
+import {NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { OrigamiFormsModule } from '@codebakery/origami/forms';
 
 
 import {BrowserModule} from '@angular/platform-browser';
@@ -18,6 +19,10 @@ import {DatePipe} from '@angular/common';
     AppRoutingModule,
     BrowserAnimationsModule,
     CoreModule,
+    OrigamiFormsModule,
+  ],
+  schemas:[
+    CUSTOM_ELEMENTS_SCHEMA
   ],
   providers: [],
   bootstrap: [AppComponent]

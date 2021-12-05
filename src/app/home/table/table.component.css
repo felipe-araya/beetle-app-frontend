@@ -1,73 +1,27 @@
-.div-container {
 
-  
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin-top: 90px;
-    margin-bottom: 30px;
-    margin-left: 30px;
-    margin-right: 30px;
+.tab1{
+  float:left;
+  overflow:scroll;
+  height: 400px;
+
+
   }
-  
-  .container{
-      background-color: white;
-      border: 1.5px solid black;
-      border-radius: 10px;
-      text-align: center;
+
+  #id1{
+    min-width: 1200px;
+    background-color: maroon;
+
   }
-  
-  .mat-table {
-    overflow: auto;
-    max-height: 500px;
+
+  #id2{
+    min-width: 1200px;
+    background-color: maroon;
+
   }
-  
-  .container{
-      background-color: white;
-      border: 1.5px solid black;
-      border-radius: 10px;
-      text-align: center;
+
+  #title1{
+    position:sticky;
+
+
+
   }
-  
-  .mat-table{
-      background-color: rgba(255, 255, 255, 0.959);
-      height : 100vh;
-      overflow: auto;   
-      width: 100%;
-  }
-  
-  .mat-header-cell, .mat-cell {
-      min-width: 150px;
-  }
-  
-  .mat-form-field-underline{
-      background-color:transparent;
-  }
-  
-  .mat-form-field-flex{
-      font-size: 14px;
-      line-height: 1em;
-      color: #555;
-      background-image: none;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      margin-top: 8px;
-      padding: 2px;
-  }
-  .mat-form-field-wrapper{
-      padding-bottom: 1.25em;
-      padding-top: 1.25em;
-  }
-  .mat-form-field-infix{
-      border:0px;
-  }
-  .mat-paginator{
-      background-color: white;
-  }
-  
-  .mat-row, .mat-header-row {
-      min-width: 2800px;
-      width: 100%;
-    }
