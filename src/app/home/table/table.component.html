@@ -373,19 +373,27 @@
 
 <ui5-table id="myTblGrowsOnScroll" class="tab1" mode="SingleSelect" growing="Scroll">
 
-  <ng-container *ngFor="let def of finding" [displayedColumns]="def">
-    <ui5-table-column *displayedColumns slot="columns" style="width: 12rem" id="title1">
-    <span style="line-height: 1.4rem">{{ def | uppercaseWords }}</span>
-    </ui5-table-column>
+  <ng-container *ngFor="let def of finding" >
+    <ng-container *ngFor="let colum of displayedColumns" >
+
+      <ui5-table-column slot="columns" style="width: 12rem" id="title1">
+        <span style="line-height: 1.4rem">{{ colum | uppercaseWords }}</span>
+        </ui5-table-column>
+
+    </ng-container>
 
 
-  <ui5-table-row>
-    <ui5-table-cell *finding="let row">{{ row[def] }}</ui5-table-cell>
-  </ui5-table-row>
+    <ui5-table-row>
+      <ui5-table-cell>{{ def[colum] }}</ui5-table-cell>
+    </ui5-table-row>
 
   <!-- <mat-header-cell *matHeaderCellDef>{{ def | uppercaseWords }}</mat-header-cell>
   <mat-cell *matCellDef="let row">{{ row[def] }}</mat-cell> -->
-</ng-container>
+  </ng-container>
+</ui5-table>
+
+
+
 
 <table id="users">
   <tr>
