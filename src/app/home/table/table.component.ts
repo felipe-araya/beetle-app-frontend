@@ -23,6 +23,10 @@ export class TableComponent implements OnInit {
 
   finding: Finding [];
 
+  matColumnDef = []
+
+
+
   constructor(private findingService: FindingService){
 
   }

@@ -434,7 +434,7 @@
 </ui5-table-column>
 
 
-<ng-container *ngFor="let def of finding" [matColumnDef]="def">
+<ng-container *ngFor="let def of finding" [displayedColumns]="def">
   <ui5-table-row>
     <ui5-table-cell *matCellDef="let row">{{ row[def] }}</ui5-table-cell>
 
@@ -446,3 +446,17 @@
   <mat-cell *matCellDef="let row">{{ row[def] }}</mat-cell> -->
 </ng-container>
 
+<table id="users">
+  <tr>
+    <th *ngFor = "let column of displayedColumns">
+      {{column}}
+    </th>
+  </tr>
+
+  <tr *ngFor = "let row of finding">
+    <td *ngFor = "let column of displayedColumns">
+      {{row[column]}}
+    </td>
+  </tr>
+
+</table>
