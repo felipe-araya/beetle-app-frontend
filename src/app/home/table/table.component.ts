@@ -48,4 +48,12 @@ export class TableComponent implements OnInit {
   //   this.table.dataSource = this.dataSource;
   // }
   }
+
+  changeData(){
+
+    this.findingService.searchAll().subscribe(x=>{
+      console.log("THIS VALUE:",x);
+      this.finding = x;
+  })
+}
 }
