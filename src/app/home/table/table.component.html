@@ -101,11 +101,11 @@
         [pageSize]="50"
         [pageSizeOptions]="[25, 50, 100, 250]">
     </mat-paginator>
-  </div>
+  </div> -->
 
-   -->
 
-    <ui5-table id="myTblGrowsOnScroll" class="tab1" mode="SingleSelect" growing="Scroll">
+
+   <!-- <ui5-table id="myTblGrowsOnScroll" class="tab1" mode="SingleSelect" growing="Scroll">
 
    <ui5-table-column slot="columns" style="width: 12rem" id="title1">
      <span style="line-height: 1.4rem">Scientific type</span>
@@ -366,22 +366,9 @@
       busyIndicator.active = false;
     }, 500);
   });
-</script>
+</script> -->
 
-<table id="users">
-  <tr>
-    <th *ngFor = "let column of displayedColumns">
-      {{column}}
-    </th>
-  </tr>
 
-  <tr *ngFor = "let row of finding">
-    <td *ngFor = "let column of displayedColumns">
-      {{row[column]}}
-    </td>
-  </tr>
-
-</table>
 
 
 <ui5-table id="myTblGrowsOnScroll" class="tab1" mode="SingleSelect" growing="Scroll">
@@ -396,8 +383,8 @@
 
   <ng-container *ngFor="let def of finding" >
       <ui5-table-row>
-        <ng-container *ngFor="let colum of displayedColumns">
-        <ui5-table-cell>{{ def[colum] }}</ui5-table-cell>
+        <ng-container *ngFor="let colum2 of displayedColumns2">
+        <ui5-table-cell>{{ def[colum2] }}</ui5-table-cell>
 
         </ng-container>
 
@@ -414,7 +401,7 @@
 
 
 
-<table id="users">
+<table>
   <tr>
     <th *ngFor = "let column of displayedColumns">
       {{column}}
@@ -422,8 +409,8 @@
   </tr>
 
   <tr *ngFor = "let row of finding">
-    <td *ngFor = "let column of displayedColumns">
-      {{row[column]}}
+    <td *ngFor = "let column2 of displayedColumns2">
+      {{row[column2]}}
     </td>
   </tr>
 

@@ -33,6 +33,7 @@ export class TableComponent implements OnInit {
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['Scientific type', 'Author', 'Characteristic', 'Location name', 'Coordinate x', 'Coordinate y', 'Altitude', 'Tolerance', 'Region', 'Date of creation', 'Observer', 'Quantity', 'Source of origin', 'Genus', 'Species' ];
+  displayedColumns2 = ['scientific_type', 'author', 'characteristic', 'location_name', 'coordinate_x', 'coordinate_y', 'altitude', 'tolerance', 'region', 'date_of_creation', 'observer', 'quantity', 'source_of_origin', 'genus', 'species' ];
 
   ngOnInit() {
     this.dataSource = new DataTableDataSource();
