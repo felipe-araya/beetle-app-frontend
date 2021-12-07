@@ -183,13 +183,23 @@
     <div class="item" id="item2">
 
 
-        <ui5-button (click)="checkTab()"> Map
+      <ui5-segmented-button>
+        <ui5-segmented-button-item icon="map" (click)="checkTab()">
 
-        </ui5-button>
+        </ui5-segmented-button-item>
 
-        <ui5-button (click)="checkTab2()"> Table
+        <ui5-segmented-button-item  icon="table-view" (click)="checkTab2()">
 
-        </ui5-button>
+        </ui5-segmented-button-item>
+
+        <ui5-segmented-button-item  icon="add" id="new-finding" (click)="checkTab3()"> New Finding
+
+        </ui5-segmented-button-item>
+
+
+
+      </ui5-segmented-button>
+
 
 
 
@@ -198,6 +208,10 @@
           </div>
           <div class ="table1" *ngIf="changeValue2">
             <app-data-table></app-data-table>
+          </div>
+
+          <div *ngIf="changeValue3">
+            <app-finding-detail></app-finding-detail>
           </div>
 
 

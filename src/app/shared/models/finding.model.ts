@@ -7,7 +7,7 @@ export interface Finding {
     coordinate_x: number;
     coordinate_y: number;
     altitude: number;
-    tolerance: string;
+    tolerance: number;
     region: string;
     date_of_creation: string;
     observer: string;
@@ -17,4 +17,3 @@ export interface Finding {
     species: string;
 
   }
-  

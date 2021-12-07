@@ -14,6 +14,7 @@ import { FindingUpdateDialogComponent } from './finding-management/finding-updat
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { FindingDetailComponent } from './finding-detail/finding-detail.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { MatSortModule } from '@angular/material/sort';
     FindingManagementComponent,
     FindingCreationDialogComponent,
     FindingUpdateDialogComponent,
+    FindingDetailComponent,
 
   ],
   entryComponents: [

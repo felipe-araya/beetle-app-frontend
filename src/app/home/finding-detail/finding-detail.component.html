@@ -1,0 +1,82 @@
+<body>
+  <div class="container">
+    <div id="map">
+      <app-map></app-map>
+    </div>
+
+    <div id="crud">
+      <ui5-upload-collection id="uploadCollectionWithRenaming">
+        <div slot="header" class="header">
+          <ui5-title>Findings</ui5-title>
+        </div>
+
+        <ui5-upload-collection-item
+          file-name="LaptopHT-1000.jpg"
+          file-name-clickable
+          type="Detail"
+          upload-state="Complete"
+        >
+          <img src="../../assets/images/cucaracha2.jpg" slot="thumbnail">
+          Uploaded By: David Keane · Uploaded On: 2014-07-26 · File Size: 35 KB
+        </ui5-upload-collection-item>
+        <ui5-upload-collection-item
+          file-name="LaptopHT-1000.jpg"
+          file-name-clickable
+          type="Detail"
+          upload-state="Complete"
+        >
+          <img src="../../assets/images/cucaracha3.jpg" slot="thumbnail">
+          Uploaded By: David Keane · Uploaded On: 2014-07-26 · File Size: 35 KB
+        </ui5-upload-collection-item>
+
+        <ui5-upload-collection-item
+          file-name="LaptopHT-1000.jpg"
+          file-name-clickable
+          type="Detail"
+          upload-state="Complete"
+        >
+          <img src="../../assets/images/cucaracha.jpg" slot="thumbnail">
+          Uploaded By: David Keane · Uploaded On: 2014-07-26 · File Size: 35 KB
+        </ui5-upload-collection-item>
+        <ui5-upload-collection-item
+          file-name="LaptopHT-1000.jpg"
+          file-name-clickable
+          type="Detail"
+          upload-state="Complete"
+        >
+          <img src="../../assets/images/cucaracha4.jpg" slot="thumbnail">
+          Uploaded By: David Keane · Uploaded On: 2014-07-26 · File Size: 35 KB
+        </ui5-upload-collection-item>
+      </ui5-upload-collection>
+
+      <script>
+        uploadCollectionWithRenaming.addEventListener("rename", event => {
+          alert("Rename event:" + event.target.fileName);
+          alert("Rename event:" + event.target.fileShow);
+
+        });
+      </script>
+    </div>
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+

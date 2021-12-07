@@ -3,7 +3,7 @@
   position: relative;
   display: grid;
 
-  height: 900px;
+  height:1200px;
 
 
 }
@@ -17,6 +17,10 @@
     height:500px;
     right: 10px;
 
+  }
+
+  #new-finding{
+    float: right;
   }
 
 

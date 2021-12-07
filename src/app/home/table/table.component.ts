@@ -2,13 +2,51 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
-import { DataTableDataSource, DataTableItem } from './table-data-source';
+import { DataTableDataSource} from './table-data-source';
 import "@ui5/webcomponents/dist/Table.js";
 import "@ui5/webcomponents/dist/TableColumn.js";
 import "@ui5/webcomponents/dist/TableRow.js";
 import "@ui5/webcomponents/dist/TableCell.js";
 import { Finding } from '@shared/models/finding.model';
 import { FindingService } from '../finding-management/finding.service';
+
+export interface DataTableItem {
+  scientific_type: string;
+  author: string;
+  characteristic: string;
+  location_name: string;
+  coordinate_x: number;
+  coordinate_y: number;
+  altitude: number;
+  tolerance: number;
+  region: string;
+  date_of_creation: string;
+  observer: string;
+  quantity: number;
+  source_of_origin: string;
+  genus: string;
+  species: string;
+
+}
+
+// TODO: replace this with real data from your application
+const EXAMPLE_DATA: DataTableItem[] = [
+  {scientific_type: 'coco', author: 'Hydrogen', characteristic: 'hola', location_name:'arica', coordinate_x: 3, coordinate_y: 4, altitude: 3, tolerance: 3, region:'D-Mecklenburg-Vorpommern', date_of_creation: '03.04.2020', observer:'Meitzner,V.', quantity: 1, source_of_origin:'Alte Datenbank Müller-Motzfeld', genus: 'Leistus', species:'terminatus'},
+  {scientific_type: 'coco', author: 'Hydrogen', characteristic: 'hola', location_name:'arica', coordinate_x: 3, coordinate_y: 4, altitude: 3, tolerance: 3, region:'D-Mecklenburg-Vorpommern', date_of_creation: '03.04.2020', observer:'Meitzner,V.', quantity: 1, source_of_origin:'Alte Datenbank Müller-Motzfeld', genus: 'Leistus', species:'terminatus'},
+  {scientific_type: 'coco', author: 'Hydrogen', characteristic: 'hola', location_name:'arica', coordinate_x: 3, coordinate_y: 4, altitude: 3, tolerance: 3, region:'D-Mecklenburg-Vorpommern', date_of_creation: '03.04.2020', observer:'Meitzner,V.', quantity: 1, source_of_origin:'Alte Datenbank Müller-Motzfeld', genus: 'Leistus', species:'terminatus'},
+  {scientific_type: 'coco', author: 'Hydrogen', characteristic: 'hola', location_name:'arica', coordinate_x: 3, coordinate_y: 4, altitude: 3, tolerance: 3, region:'D-Mecklenburg-Vorpommern', date_of_creation: '03.04.2020', observer:'Meitzner,V.', quantity: 1, source_of_origin:'Alte Datenbank Müller-Motzfeld', genus: 'Leistus', species:'terminatus'},
+  {scientific_type: 'coco', author: 'Hydrogen', characteristic: 'hola', location_name:'arica', coordinate_x: 3, coordinate_y: 4, altitude: 3, tolerance: 3, region:'D-Mecklenburg-Vorpommern', date_of_creation: '03.04.2020', observer:'Meitzner,V.', quantity: 1, source_of_origin:'Alte Datenbank Müller-Motzfeld', genus: 'Leistus', species:'terminatus'},
+  {scientific_type: 'coco', author: 'Hydrogen', characteristic: 'hola', location_name:'arica', coordinate_x: 3, coordinate_y: 4, altitude: 3, tolerance: 3, region:'D-Mecklenburg-Vorpommern', date_of_creation: '03.04.2020', observer:'Meitzner,V.', quantity: 1, source_of_origin:'Alte Datenbank Müller-Motzfeld', genus: 'Leistus', species:'terminatus'},
+  {scientific_type: 'coco', author: 'Hydrogen', characteristic: 'hola', location_name:'arica', coordinate_x: 3, coordinate_y: 4, altitude: 3, tolerance: 3, region:'D-Mecklenburg-Vorpommern', date_of_creation: '03.04.2020', observer:'Meitzner,V.', quantity: 1, source_of_origin:'Alte Datenbank Müller-Motzfeld', genus: 'Leistus', species:'terminatus'},
+  {scientific_type: 'coco', author: 'Hydrogen', characteristic: 'hola', location_name:'arica', coordinate_x: 3, coordinate_y: 4, altitude: 3, tolerance: 3, region:'D-Mecklenburg-Vorpommern', date_of_creation: '03.04.2020', observer:'Meitzner,V.', quantity: 1, source_of_origin:'Alte Datenbank Müller-Motzfeld', genus: 'Leistus', species:'terminatus'},
+  {scientific_type: 'coco', author: 'Hydrogen', characteristic: 'hola', location_name:'arica', coordinate_x: 3, coordinate_y: 4, altitude: 3, tolerance: 3, region:'D-Mecklenburg-Vorpommern', date_of_creation: '03.04.2020', observer:'Meitzner,V.', quantity: 1, source_of_origin:'Alte Datenbank Müller-Motzfeld', genus: 'Leistus', species:'terminatus'},
+  {scientific_type: 'coco', author: 'Hydrogen', characteristic: 'hola', location_name:'arica', coordinate_x: 3, coordinate_y: 4, altitude: 3, tolerance: 3, region:'D-Mecklenburg-Vorpommern', date_of_creation: '03.04.2020', observer:'Meitzner,V.', quantity: 1, source_of_origin:'Alte Datenbank Müller-Motzfeld', genus: 'Leistus', species:'terminatus'},
+  {scientific_type: 'coco', author: 'Hydrogen', characteristic: 'hola', location_name:'arica', coordinate_x: 3, coordinate_y: 4, altitude: 3, tolerance: 3, region:'D-Mecklenburg-Vorpommern', date_of_creation: '03.04.2020', observer:'Meitzner,V.', quantity: 1, source_of_origin:'Alte Datenbank Müller-Motzfeld', genus: 'Leistus', species:'terminatus'},
+  {scientific_type: 'coco', author: 'Hydrogen', characteristic: 'hola', location_name:'arica', coordinate_x: 3, coordinate_y: 4, altitude: 3, tolerance: 3, region:'D-Mecklenburg-Vorpommern', date_of_creation: '03.04.2020', observer:'Meitzner,V.', quantity: 1, source_of_origin:'Alte Datenbank Müller-Motzfeld', genus: 'Leistus', species:'terminatus'},
+  {scientific_type: 'coco', author: 'Hydrogen', characteristic: 'hola', location_name:'arica', coordinate_x: 3, coordinate_y: 4, altitude: 3, tolerance: 3, region:'D-Mecklenburg-Vorpommern', date_of_creation: '03.04.2020', observer:'Meitzner,V.', quantity: 1, source_of_origin:'Alte Datenbank Müller-Motzfeld', genus: 'Leistus', species:'terminatus'},
+  {scientific_type: 'coco', author: 'Hydrogen', characteristic: 'hola', location_name:'arica', coordinate_x: 3, coordinate_y: 4, altitude: 3, tolerance: 3, region:'D-Mecklenburg-Vorpommern', date_of_creation: '03.04.2020', observer:'Meitzner,V.', quantity: 1, source_of_origin:'Alte Datenbank Müller-Motzfeld', genus: 'Leistus', species:'terminatus'}
+
+];
 
 @Component({
   selector: 'app-data-table',
@@ -21,7 +59,7 @@ export class TableComponent implements OnInit {
   // @ViewChild(MatTable) table: MatTable<DataTableItem>;
   dataSource: DataTableDataSource;
 
-  finding: Finding [];
+  finding: Finding [] = EXAMPLE_DATA;
 
   matColumnDef = []
 
@@ -38,10 +76,10 @@ export class TableComponent implements OnInit {
   ngOnInit() {
     this.dataSource = new DataTableDataSource();
 
-    this.findingService.searchAll().subscribe(x=>{
-      console.log("THIS VALUE:",x);
-      this.finding = x;
-  })
+    // this.findingService.searchAll().subscribe(x=>{
+    //   console.log("THIS VALUE:",x);
+      // this.finding = x;
+  // })
 
   // ngAfterViewInit() {
   //   this.dataSource.sort = this.sort;
